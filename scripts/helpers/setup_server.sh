@@ -2,7 +2,7 @@ PROJECT_ROOT="$(dirname "$(realpath "$0")")/../.."
 SERVER_DIR="$PROJECT_ROOT/server"
 SERVER_PACKAGES_FILE="$PROJECT_ROOT/scripts/dependencies/serverRequirements.txt"
 
-echo "Starting server setup..."
+echo "Starting server setup...⏳"
 if [ -d "$SERVER_DIR" ]; then
     echo "Navigating to $SERVER_DIR..."
     cd "$SERVER_DIR" || exit
@@ -19,17 +19,17 @@ if [ -d "$SERVER_DIR" ]; then
         echo "Found package file at $SERVER_PACKAGES_FILE. Installing packages..."
         while IFS= read -r package; do
             if [ ! -z "$package" ]; then
-                echo "Installing $package..."
+                echo "Installing $package...⏳⏳⏳"
                 npm install "$package"
             fi
         done < "$SERVER_PACKAGES_FILE"
     else
-        echo "No package file found at $SERVER_PACKAGES_FILE."
+        echo "🔴🔴 No package file found at $SERVER_PACKAGES_FILE."
     fi
 
     cd - || exit
 else
-    echo "Directory $SERVER_DIR does not exist."
+    echo "🔴 Directory $SERVER_DIR does not exist."
 fi
 
-echo "Server setup complete ! Happy Coding :)"
+echo "Server setup complete ! Happy Coding ✅✅✅"

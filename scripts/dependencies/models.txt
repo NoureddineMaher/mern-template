@@ -1,0 +1,14 @@
+Role:
+  role: String, required, unique
+
+User:
+  username: String, required, unique
+  email: String, required, unique
+  password: String, required
+  createdAt: Date, default: Date.now
+
+Post:
+  title: String, required
+  content: String
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  createdAt: Date, default: Date.now
