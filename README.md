@@ -23,6 +23,8 @@ MERN-TEMPLATE/
 │   ├── dependencies/           # Dependency files
 │   │   ├── clientPackages.txt  # Packages to install for the client
 │   │   └── serverPackages.txt  # Packages to install for the server
+│   │   └── dbConfigRequirements.txt  # Variables to past in .env server Directory
+│   │   └── models.txt  # structure of models to create for the server 
 │   └── helpers/                # Helper scripts
 │       ├── setup_project.sh    # Script to set up project folders
 │       ├── setup_client.sh     # Script to install packages listed in clientPackages.txt
